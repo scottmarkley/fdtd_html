@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link href="style.css" rel="stylesheet" type="text/css" media="all">
+	</head>
+	<body onload="init();">
+      <script type="test/javascript"> var sliderChanged = true; </script>
+		<script type="text/javascript" src="colormap.js"></script>
+		<script type="text/javascript" src="source.js"></script>
+		<script type="text/javascript" src="direct.js"></script>
+		
+		<div>
+			<canvas id="canvas1" width="600", height="400"/>
+		</div>
+        
+		<div class="slidecontainer">
+			<input type="range" name="sources" id="sources" min="1" max="16" value="1" class="slider" oninput="sourcesUpdate(value)">
+			<output for="sources" id="sourcesVal">1</output> sources
+			<script type="text/javascript">
+				function sourcesUpdate(val) {
+					document.querySelector('#sourcesVal').value = val;
+				}
+			</script>
+		</div>
+		<div class="slidecontainer">
+			<input type="range" name="phaseShift" id="phase" min="-90" max="90" value="0" class="slider" oninput="phaseShiftUpdate(value)">
+			<output for="sources" id="phaseShiftVal">0</output> deg. phase shift per element
+			<script type="text/javascript">
+				function phaseShiftUpdate(val) {
+					document.querySelector('#phaseShiftVal').value = val;
+				}
+			</script>
+		</div>
+       <button onclick="clear()">Clear</button>      
+ 	</body>
+</html>
